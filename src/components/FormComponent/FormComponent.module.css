@@ -1,0 +1,52 @@
+.orderComponentFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 1rem 0 0;
+}
+.totalPrice {
+  background-color: #00a0461a;
+  border: 1px solid #00a046;
+  padding: 0.5rem;
+  border-radius: 7px;
+  margin-left: auto !important;
+  width: fit-content;
+  height: fit-content;
+  align-self: end;
+}
+.cartReceipt {
+  display: flex;
+  align-items: center;
+  background-color: #00a0461a;
+  border: 1px solid #00a046;
+  padding: 0.5rem;
+  border-radius: 7px;
+  margin-top: 1rem;
+}
+.formWrapper {
+  display: flex;
+  flex: 1;
+  max-width: fit-content;
+  flex-direction: row;
+  min-height: 140px;
+  border-radius: 7px;
+  height: fit-content;
+  padding: 1rem;
+  max-width: 550px;
+  min-width: 300px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+@media only screen and (max-width: 800px) {
+  .formWrapper {
+    flex-direction: column;
+    margin: auto;
+    margin-bottom: 0.5rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .formWrapper {
+    width: 100%;
+  }
+}

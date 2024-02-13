@@ -1,0 +1,8 @@
+.cartReceipt {
+  display: flex;
+  align-items: center;
+  background-color: #00a0461a;
+  border: 1px solid #00a046;
+  padding: 0.5rem;
+  border-radius: 7px;
+}

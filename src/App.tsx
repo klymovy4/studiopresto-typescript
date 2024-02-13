@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import useApi from "./api/useApi";
+import Box from "@mui/material/Box";
+import DrawerComponent from "./components/DrawerComponent/DrawerComponent";
+import MainPage from "./components/MainPage/MainPage";
+import { initializedApp } from "./store/itemsSlice";
+import { useAppDispatch, useAppSelector } from "./hooks/redux";
 
-function App() {
+export default function App() {
+  const dispatch = useAppDispatch();
+  const { initialized } = useAppSelector((state) => state.items);
+  const { init } = useApi();
+
+  useEffect(() => {
+    if (!initialized) {
+      init();
+      dispatch(initializedApp());
+    } 
+  }, []);
+
+  if(!initialized) return <h1>No init</h1>
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{ display: "flex" }}>
+      <DrawerComponent />
+      <MainPage />
+    </Box>
   );
 }
-
-export default App;

@@ -1,0 +1,14 @@
+.formAndCheckoutWrapper {
+  display: flex;
+}
+
+@media only screen and (max-width: 800px) {
+  .formAndCheckoutWrapper {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .orderRecipientItem {
+    flex: 0 0 100%;
+  }
+}
