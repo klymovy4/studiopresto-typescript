@@ -20,7 +20,7 @@ export default function CheckoutOrder() {
                 {item?.item.title}
               </Typography>
               <Typography sx={{ mt: 1}}>
-                {item?.item.price} x {item.quantity}pcs: {item.priceCurrentPosition} ₴
+                {item?.item.price} x {item.quantity}pcs: {item.priceCurrentPosition.toFixed(2)} ₴
               </Typography>
             </Box>
             </div>

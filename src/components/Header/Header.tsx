@@ -26,7 +26,7 @@ export default function Header() {
             sx={{ display: { sm: "block" , cursor: 'pointer'} }}
             onClick={() => navigate("/")}
           >
-            Typescript
+            Studiopresto
           </Typography>
 
           <Box sx={{ flexGrow: 1 }} />
