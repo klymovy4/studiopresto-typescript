@@ -5,9 +5,10 @@ import DrawerComponent from "./components/DrawerComponent/DrawerComponent";
 import MainPage from "./components/MainPage/MainPage";
 import { useAppSelector } from "./hooks/redux";
 import Loader from "./components/Loader/Loader";
+import { Typography } from "@mui/material";
 
 export default function App() {
-  const { initialized } = useAppSelector((state) => state.items);
+  const { initialized, error } = useAppSelector((state) => state.items);
   const { init } = useApi();
 
   useEffect(() => {
@@ -19,7 +20,13 @@ export default function App() {
   return (
     <Box sx={{ display: "flex" }}>
       <DrawerComponent />
-      {!initialized ? <Loader /> : <MainPage />}
+      {error ? (
+        <Typography variant="h5">Something went wrong</Typography>
+      ) : initialized ? (
+        <MainPage />
+      ) : (
+        <Loader />
+      )}
     </Box>
   );
 }

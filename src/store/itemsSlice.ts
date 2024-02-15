@@ -9,6 +9,7 @@ const initialState: ItemsState = {
   slicedItems: [],
   isLoading: false,
   initialized: false,
+  error: "",
 };
 
 export const itemsSlice = createSlice({
@@ -17,6 +18,9 @@ export const itemsSlice = createSlice({
   reducers: {
     setItems: (state, action: PayloadAction<IProduct[]>) => {
       state.items = action.payload;
+    },
+    setItemsError: (state, action: PayloadAction<string>) => {
+      state.error = action.payload;
     },
     setSlicedItems: (state, action: PayloadAction<IProduct[][]>) => {
       state.slicedItems = action.payload;
@@ -47,6 +51,7 @@ export const {
   findBySearch,
   toggleLoader,
   initializedApp,
+  setItemsError,
 } = itemsSlice.actions;
 
 export default itemsSlice.reducer;

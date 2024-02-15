@@ -29,6 +29,7 @@ export interface ItemsState {
   slicedItems: IProduct[][];
   isLoading: boolean;
   initialized: boolean;
+  error: string;
 }
 
 export interface CartState {

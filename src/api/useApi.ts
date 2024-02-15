@@ -6,6 +6,7 @@ import {
   setSlicedItems,
   setItemsCategory,
   toggleLoader,
+  setItemsError,
 } from "../store/itemsSlice";
 import { IOrderResult, IProduct } from "../models/models";
 import { useAppDispatch } from "../hooks/redux";
@@ -21,13 +22,19 @@ export default function useApi() {
   };
 
   const fetchItems = async function () {
-    const products = await GET<IProduct[]>("products");
-    if (products) {
-      let slicedItems = sliceItems(products);
-
-      dispatch(setSlicedItems(slicedItems));
-      dispatch(setItems(products));
-      dispatch(initializedApp());
+    try {
+      dispatch(toggleLoader(true));
+      const products = await GET<IProduct[]>("products");
+      if (products) {
+        let slicedItems = sliceItems(products);
+        dispatch(setSlicedItems(slicedItems));
+        dispatch(setItems(products));
+        dispatch(initializedApp());
+        dispatch(toggleLoader(false));
+      }
+    } catch (e: any) {
+      dispatch(toggleLoader(false));
+      dispatch(setItemsError(e.message));
     }
   };
 
