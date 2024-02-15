@@ -31,7 +31,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Step #2
 
-To successfully send a message, you must replace `SENDGRID_API_KEY` in the file `src/server/.env` with a valid one.
+To successfully send a message, you have to create `src/server/.env`  exactly the same as `src/server/.env.example` and replace `SENDGRID_API_KEY` in the file `src/server/.env` with a valid one.
 
 ## Step #3
 

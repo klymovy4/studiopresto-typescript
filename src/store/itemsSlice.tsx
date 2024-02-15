@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { sliceItems } from "../utils/helper";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { IProduct, InitialItemsState } from "../models/models";
+import { IProduct, ItemsState } from "../models/models";
 
-const initialState: InitialItemsState = {
+const initialState: ItemsState = {
   items: [],
   categories: [],
   slicedItems: [],

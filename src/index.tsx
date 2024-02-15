@@ -6,7 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { Toolbar } from "@mui/material";
-import { store } from "./store";
+// import { store } from "./store";
+import {setupStore} from './store'
 import { Outlet } from "react-router-dom";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
 import Header from "./components/Header/Header";
@@ -57,6 +58,8 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
+const store = setupStore();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

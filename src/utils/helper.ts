@@ -19,8 +19,9 @@ export function cartCounter(state: ICart[]): number {
   }, 0);
 }
 
-export function sumOfOnePosition(item: ICart) {
-  return item.item.price * item.quantity;
+export function sumOfOnePosition(item: ICart): number {
+  let res = item.item.price * item.quantity;
+  return Number(res.toFixed(2));
 }
 
 export function getTotalPrice(cart: ICart[]): number {

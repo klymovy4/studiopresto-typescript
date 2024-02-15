@@ -23,7 +23,7 @@ export interface IUser {
   phone: string;
 }
 
-export interface InitialItemsState {
+export interface ItemsState {
   items: IProduct[];
   categories: Array<string>;
   slicedItems: IProduct[][];
@@ -31,7 +31,7 @@ export interface InitialItemsState {
   initialized: boolean;
 }
 
-export interface InitialCartState {
+export interface CartState {
   cart: ICart[];
   cartCounter: number;
   totalPrice: number;

@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { cartCounter, sumOfOnePosition, getTotalPrice } from "../utils/helper";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { ICart, IProduct, InitialCartState } from "../models/models";
+import { ICart, IProduct, CartState } from "../models/models";
 import showNotification from "../components/Notification/Notification";
 
-const initialState: InitialCartState = {
+const initialState: CartState = {
   cart: [],
   cartCounter: 0,
   totalPrice: 0,
