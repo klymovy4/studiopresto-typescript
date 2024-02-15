@@ -43,7 +43,7 @@ export default function MainPage() {
   }
 
   useEffect(() => {
-      dispatch(findBySearch(debounced));
+    dispatch(findBySearch(debounced));
   }, [debounced]);
 
   return (
