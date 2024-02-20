@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import CheckoutOrder from "../CheckoutOrder/CheckoutOrder";
+import CheckoutOrder from "../../components/CheckoutOrder/CheckoutOrder";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import classes from "./OrderComponent.module.css";
-import FormComponent from "../FormComponent/FormComponent";
+import FormComponent from "../../components/FormComponent/FormComponent";
 import { useAppSelector } from "../../hooks/redux";
 
-export default function OrderComponent() {
+export default function OrderComponentPage() {
   const navigate = useNavigate();
   const { totalPrice } = useAppSelector((state) => state.cart);
 
@@ -15,7 +15,7 @@ export default function OrderComponent() {
     if (totalPrice === 0) {
       navigate("/cart");
     }
-  });
+  }, []);
 
   return (
     <Box component="main" className="main-wrap-style">

@@ -3,11 +3,11 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import useApi from "../../api/useApi";
 import { findBySearch } from "../../store/itemsSlice";
-import BasicPagination from "../Pagination/Pagination";
-import BasicCard from "../ProductCard/ProductCard";
+import BasicPagination from "../../components/Pagination/Pagination";
+import BasicCard from "../../components/ProductCard/ProductCard";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import Input from "@mui/joy/Input";
-import Loader from "../Loader/Loader";
+import Loader from "../../components/Loader/Loader";
 import useInput from "../../hooks/useInput";
 import useDebounce from "../../hooks/useDebounce";
 
@@ -17,7 +17,7 @@ export default function MainPage() {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const debounced = useDebounce<string>(input.value);
 
-  const { fetchSpetialCategory } = useApi();
+  const { fetchSpecialCategory } = useApi();
   const { slicedItems, isLoading, categories } = useAppSelector(
     (state) => state.items
   );
@@ -25,7 +25,7 @@ export default function MainPage() {
   useEffect(() => {
     const currentCategory = localStorage.getItem("currentCategory") || "";
     if (categories.includes(currentCategory)) {
-      fetchSpetialCategory(currentCategory);
+      fetchSpecialCategory(currentCategory);
     }
   }, []);
 
@@ -36,10 +36,7 @@ export default function MainPage() {
   }, [slicedItems]);
 
   function checkCurrentPage(): boolean {
-    if (slicedItems?.length > 0 && slicedItems[currentPage - 1]) {
-      return true;
-    }
-    return false;
+    return !!(slicedItems?.length > 0 && slicedItems[currentPage - 1]);
   }
 
   useEffect(() => {

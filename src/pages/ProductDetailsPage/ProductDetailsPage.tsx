@@ -4,11 +4,11 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import { addToCart } from "../../store/cartSlice";
-import ImageWrapper from "../ImageWrapper/ImageWrapper";
+import ImageWrapper from "../../components/ImageWrapper/ImageWrapper";
 import classes from "./ProductDetails.module.css";
 import { useAppDispatch } from "../../hooks/redux";
 
-export default function ProductDetails() {
+export default function ProductDetailsPage() {
   const { state } = useLocation();
   const dispatch = useAppDispatch();
   const item = state;
@@ -21,7 +21,7 @@ export default function ProductDetails() {
     >
       <Box sx={{ margin: 2, marginLeft: 0 }}>
         <Typography variant="h5">
-          Product deteils
+          Product details
         </Typography>
       </Box>
 

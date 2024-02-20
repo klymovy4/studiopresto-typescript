@@ -34,7 +34,7 @@ export default function FormComponent() {
     
     dispatch(resetCart());
     navigate("/success", { state: values });
-    localStorage.clear();
+    localStorage.removeItem('currentCategory');
   }
 
 

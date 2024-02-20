@@ -1,12 +1,12 @@
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
-import CartItem from "../CartItem/CartItem";
+import CartItem from "../../components/CartItem/CartItem";
 import classes from "./Cart.module.css";
 import { useNavigate } from "react-router-dom";
-import OrderButton from "../OrderButton/OrderButton";
+import OrderButton from "../../components/OrderButton/OrderButton";
 import { useAppSelector } from "../../hooks/redux";
 
-export default function CartComponent() {
+export default function CartComponentPage() {
   const navigate = useNavigate();
   const { cart, totalPrice } = useAppSelector((state) => state.cart);
 

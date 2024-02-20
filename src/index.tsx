@@ -1,19 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { Toolbar } from "@mui/material";
 // import { store } from "./store";
-import {setupStore} from './store'
+import { setupStore } from './store'
 import { Outlet } from "react-router-dom";
-import ProductDetails from "./components/ProductDetails/ProductDetails";
+import ProductDetailsPage from "./pages/ProductDetailsPage/ProductDetailsPage";
 import Header from "./components/Header/Header";
-import CartComponent from "./components/CartComponent/CartComponent";
-import OrderComponent from "./components/OrderComponent/OrderComponent";
-import SuccessPage from "./components/SuccessPage/SuccessPage";
+import CartComponentPage from "./pages/CartComponentPage/CartComponentPage";
+import OrderComponentPage from "./pages/OrderComponentPage/OrderComponentPage";
+import SuccessPage from "./pages/SuccessPage/SuccessPage";
+import "./index.css";
 
 function Layout() {
   return (
@@ -32,7 +31,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "item/:id",
-        element: <ProductDetails />,
+        element: <ProductDetailsPage />,
       },
       {
         path: "/",
@@ -40,12 +39,12 @@ const router = createBrowserRouter([
       },
       {
         path: "cart",
-        element: <CartComponent />,
+        element: <CartComponentPage />,
         children: [],
       },
       {
         path: "order",
-        element: <OrderComponent />,
+        element: <OrderComponentPage />,
       },
       {
         path: "success",
@@ -71,8 +70,3 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

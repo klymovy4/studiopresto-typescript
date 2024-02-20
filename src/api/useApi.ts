@@ -43,7 +43,7 @@ export default function useApi() {
     if (category) dispatch(setItemsCategory(category));
   };
 
-  const fetchSpetialCategory = async function (category?: string) {
+  const fetchSpecialCategory = async function (category?: string) {
     dispatch(toggleLoader(true));
     let product: IProduct[] | undefined;
 
@@ -79,5 +79,5 @@ export default function useApi() {
     }
   };
 
-  return { init, fetchSpetialCategory, postEmail };
+  return { init, fetchSpecialCategory, postEmail };
 }

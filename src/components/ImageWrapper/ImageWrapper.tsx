@@ -1,5 +1,6 @@
+import React from "react";
 import { IProduct } from '../../models/models';
-import classes from './ImageWrapper.module.css'
+import classes from './ImageWrapper.module.css';
 
 interface IPhotoItem extends IProduct {
   style: React.CSSProperties

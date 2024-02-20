@@ -12,7 +12,7 @@ import { useAppSelector } from "../../hooks/redux";
 const drawerWidth = 165;
 
 export default function DrawerComponent() {
-  const { fetchSpetialCategory } = useApi();
+  const { fetchSpecialCategory } = useApi();
   const { categories } = useAppSelector((state) => state.items);
 
   return (
@@ -32,7 +32,7 @@ export default function DrawerComponent() {
         <Box sx={{ overflow: "auto" }}>
           <List>
             <ListItem disablePadding 
-            onClick={() => fetchSpetialCategory()}
+            onClick={() => fetchSpecialCategory()}
             >
               <ListItemButton>
                 <ListItemText primary={"All"} />
@@ -43,7 +43,7 @@ export default function DrawerComponent() {
                 <ListItem
                   key={text}
                   disablePadding
-                  onClick={() => fetchSpetialCategory(text)}
+                  onClick={() => fetchSpecialCategory(text)}
                 >
                   <ListItemButton>
                     <ListItemText
